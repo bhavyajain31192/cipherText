@@ -9,6 +9,7 @@ exports.getCipherText = (req, res) => {
     let key= req.body.key;
     return async.autoInject(
         {
+            
             cipherText: function (callback) {
                 const newArr = [];
                 const newKey = key % 26;
