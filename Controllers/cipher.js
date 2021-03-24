@@ -13,16 +13,13 @@ exports.getCipherText = (req, res) => {
                 const newArr = [];
                 const newKey = key % 26;
                 const alphabets = 'abcdefghijklmnopqrstuvwxyz'.split('');
-                console.log("alphabets", alphabets, newKey)
                 for (let letter of string) {
                     newArr.push(getNewLetter(letter, newKey, alphabets));
-                    console.log("alphabets",newArr);
                 }
                 return callback(null, newArr.join(''));
             },
         },
         function (err, response) {
-            console.log("response", response)
             if (err) {
                  return res.send(res, err);
             }
